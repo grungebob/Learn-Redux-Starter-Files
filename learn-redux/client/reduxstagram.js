@@ -1,7 +1,12 @@
 // let's go!
+// import React from '../../../../../Library/Caches/typescript/2.9/node_modules/@types/react';
 import React from 'react';
 
+
+// import { render } from '../../../../../Library/Caches/typescript/2.9/node_modules/@types/react-dom';
+
 import { render } from 'react-dom';
+
 
 // Import css
 
@@ -14,15 +19,23 @@ import PhotoGrid from './components/PhotoGrid';
 
 
 //import react router deps
+// import { Router, Route, IndexRoute, browserHistory } from '../../../../../Library/Caches/typescript/2.9/node_modules/@types/react-router';
+
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { Provider } from 'react-redux';
+import store, { history } from './store';
+
 
 const router = (
-    <Router history={browserHistory}>
-        <Route path = "/" component={Main}>
-        <IndexRoute component={PhotoGrid}></IndexRoute>
-        <Route path="view/:postId" component={Single}></Route>
-        </Route>
-    </Router>
+    <Provider store={store}>
+        <Router history={history}>
+            <Route path = "/" component={Main}>
+            <IndexRoute component={PhotoGrid}></IndexRoute>
+            <Route path="view/:postId" component={Single}></Route>
+            </Route>
+        </Router>
+    </Provider>
+
 )
  
 render(router, document.getElementById('root'));
