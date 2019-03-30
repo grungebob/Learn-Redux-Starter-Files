@@ -26,6 +26,27 @@ import { Provider } from 'react-redux';
 import store, { history } from './store';
 
 
+// === Sentry stuff ======
+import Raven from 'raven-js';
+import { sentry_url, logException } from './data/config';
+
+Raven.config(sentry_url, {
+    tags:{
+        git_commit: 'jkljlkjkj;',
+        userLevel: 'editor'
+    }
+}).install();
+
+logException(new Error('download failed!'), {
+    email: 'wesbos@gmail.com'
+});   
+
+// Raven.captureMessage('Something bad happened!');
+// Raven.showReportDialog();
+
+//===== ^ Sentry====
+
+
 const router = (
     <Provider store={store}>
         <Router history={history}>
