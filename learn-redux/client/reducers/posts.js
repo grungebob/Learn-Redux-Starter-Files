@@ -7,7 +7,8 @@
 // Then update the new state of the store
 
 function posts(state = [], action) {
-    console.log(state, action);
+    console.log('THE POST WILL CHANGE');
+    console.log('POSTS JS STATE: ', state, 'POSTS JS ACTION: ', action);
     return state;
 }
 
