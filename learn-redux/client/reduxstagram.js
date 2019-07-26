@@ -18,13 +18,16 @@ import store, { history } from './store';
 
 
 const router = (
-    <Router history={browserHistory}>
+    <Provider store={store}>
+    <Router history={history}>
         <Route path="/" component={Main}>
             <IndexRoute component={PhotoGrid}>
                 <Route path="/view/:postId" component={Single}></Route>
             </IndexRoute>
         </Route>
     </Router>
+    </Provider>
+
 )
 
 render(router, document.getElementById('root'));
