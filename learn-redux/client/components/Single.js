@@ -9,7 +9,7 @@ const Single = React.createClass({
         const i = this.props.posts.findIndex((post) => post.code === this.props.params.postId);
         console.log('INDEX OF THE POST: ', i)
         // Get us the post
-        const post = this.props.post[i];
+        const post = this.props.posts[i];
         console.log('POST ', post);
         const postComments = this.props.comments[postId] || [];
 
