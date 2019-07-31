@@ -27,12 +27,12 @@ Raven.config(sentry_url, {
     }
 }).install();
 
-Raven.captureMessage('SOMETHING BAD HAPPENED!');
-Raven.showReportDialog();
+// Raven.captureMessage('SOMETHING BAD HAPPENED!');
+// Raven.showReportDialog();
 
-logException(new Error('download failed!'), {
-    email: 'robertchung@stockx.com'
-})
+// logException(new Error('download failed!'), {
+//     email: 'robertchung@stockx.com'
+// })
 
 
 const router = (
